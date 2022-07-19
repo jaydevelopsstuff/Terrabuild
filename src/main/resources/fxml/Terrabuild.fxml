@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="706.0" prefWidth="1200.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.Terrabuild">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <Pane prefHeight="709.0" prefWidth="1200.0">
+         <children>
+            <Line endX="3800.0" endY="60.0" startX="185.0" startY="60.0" stroke="#252525" strokeWidth="6.0" />
+            <Line endX="185.0" startX="185.0" startY="2800.0" stroke="#252525" strokeWidth="6.0" />
+         </children>
+      </Pane>
+      <AnchorPane layoutX="191.0" layoutY="65.0" prefHeight="648.0" prefWidth="1009.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="191.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0">
+         <children>
+            <AnchorPane fx:id="itemsPane" prefHeight="648.0" prefWidth="1009.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label alignment="CENTER" prefHeight="66.0" prefWidth="1009.0" styleClass="title" text="Items" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <MFXListView fx:id="itemsList" layoutX="198.0" layoutY="105.0" prefHeight="457.0" prefWidth="614.0" styleClass="list" AnchorPane.bottomAnchor="86.0" AnchorPane.leftAnchor="198.0" AnchorPane.rightAnchor="197.0" AnchorPane.topAnchor="105.0" />
+                  <HBox alignment="CENTER" layoutX="1.0" layoutY="573.0" prefHeight="37.0" prefWidth="1009.0" AnchorPane.bottomAnchor="38.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                     <children>
+                        <MFXButton onMouseReleased="#createNewItemReleased" prefHeight="33.0" prefWidth="202.0" styleClass="highlight-button" text="Create New Item" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="modInfoPane" prefHeight="648.0" prefWidth="1015.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <Label fx:id="modInfoLabel" alignment="CENTER" layoutX="-1.0" prefHeight="66.0" prefWidth="1009.0" styleClass="title" text="Mod Details" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                  <AnchorPane layoutY="66.0" prefHeight="583.0" prefWidth="1015.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="66.0">
+                     <children>
+                        <MFXScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" prefHeight="577.0" prefWidth="1014.0" styleClass="container" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <content>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0">
+                                 <children>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mod Name">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="name" maxWidth="-Infinity" prefHeight="25.0" prefWidth="290.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mod Display Name">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="displayName" maxWidth="-Infinity" prefHeight="25.0" prefWidth="290.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mod Author">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="author" maxWidth="-Infinity" prefHeight="25.0" prefWidth="290.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mod Version">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="version" maxWidth="-Infinity" prefHeight="25.0" prefWidth="142.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mod Homepage">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <TextField fx:id="homepage" maxWidth="-Infinity" prefHeight="25.0" prefWidth="290.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextField>
+                                    <Text fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Mod Description">
+                                       <font>
+                                          <Font size="22.0" />
+                                       </font>
+                                    </Text>
+                                    <TextArea fx:id="description" maxWidth="-Infinity" prefHeight="171.0" prefWidth="701.0">
+                                       <VBox.margin>
+                                          <Insets bottom="10.0" />
+                                       </VBox.margin>
+                                    </TextArea>
+                                    <MFXButton maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseReleased="#onModInfoSaveReleased" prefHeight="29.0" prefWidth="126.0" styleClass="highlight-button" text="Save">
+                                       <font>
+                                          <Font name="Verdana" size="13.0" />
+                                       </font>
+                                    </MFXButton>
+                                 </children>
+                              </VBox>
+                           </content>
+                        </MFXScrollPane>
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+            <VBox fx:id="infoPane" alignment="TOP_CENTER" prefHeight="634.0" prefWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <children>
+                  <Label styleClass="title" text="Terrabuild" textAlignment="CENTER" textFill="WHITE" />
+                  <Text fx:id="versionText" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="Version">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+                  <Text fx:id="versionText1" fill="WHITE" layoutX="484.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Created by Guardian Development © 2022">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane prefHeight="700.0" prefWidth="185.0">
+         <children>
+            <ImageView fitHeight="127.0" fitWidth="137.0" layoutX="29.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../icon.png" />
+               </image>
+            </ImageView>
+            <Text fill="WHITE" layoutX="36.0" layoutY="171.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Terrabuild">
+               <font>
+                  <Font name="Verdana" size="22.0" />
+               </font>
+            </Text>
+            <MFXButton fx:id="itemsBtn" layoutX="23.0" layoutY="263.0" onMouseReleased="#itemsReleased" prefHeight="27.0" prefWidth="139.0" text="Items" visible="false">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </MFXButton>
+            <MFXButton fx:id="modInfoBtn" layoutX="23.0" layoutY="227.0" onMouseReleased="#modInfoReleased" prefHeight="27.0" prefWidth="139.0" text="Mod Info" visible="false">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </MFXButton>
+            <MFXButton fx:id="infoBtn" layoutX="23.0" layoutY="192.0" onMouseReleased="#infoReleased" prefHeight="27.0" prefWidth="139.0" text="Info">
+               <font>
+                  <Font name="Verdana" size="13.0" />
+               </font>
+            </MFXButton>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="185.0" prefHeight="60.0" prefWidth="1015.0" AnchorPane.leftAnchor="185.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <BorderPane prefHeight="57.0" prefWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+               <left>
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="307.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <MFXButton onMouseReleased="#exportModReleased" prefHeight="27.0" prefWidth="139.0" text="Export Mod">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+               </left>
+               <right>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="57.0" prefWidth="309.0" spacing="10.0" BorderPane.alignment="CENTER">
+                     <children>
+                        <MFXButton onMouseReleased="#manageModsReleased" prefHeight="27.0" prefWidth="139.0" text="Manage Mods">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </MFXButton>
+                        <MFXButton onMouseReleased="#settingsReleased" prefHeight="27.0" prefWidth="139.0" styleClass="highlight-button" text="Settings">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                           <padding>
+                              <Insets right="10.0" />
+                           </padding>
+                           <HBox.margin>
+                              <Insets right="10.0" />
+                           </HBox.margin>
+                        </MFXButton>
+                     </children>
+                  </HBox>
+               </right>
+            </BorderPane>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

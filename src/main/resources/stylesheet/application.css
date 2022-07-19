@@ -1,0 +1,111 @@
+.text {
+    -fx-text-fill: white;
+}
+
+.container {
+    -fx-background-color:  #141414;
+}
+
+.title {
+    -fx-font-size: 45;
+}
+
+.button {
+    -fx-background-color: #343434;
+}
+
+.highlight-button {
+    -fx-background-color: #0f3fab;
+}
+
+.red-button {
+    -fx-background-color: #910b0b;
+}
+
+.text-field {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: white;
+}
+
+.text-area {
+    -fx-border-color: #1f1f1f;
+    -fx-background-color: #1f1f1f;
+    -fx-border-radius: 10;
+    -fx-text-fill: white;
+}
+
+.text-area .content {
+    -fx-background-color: #1f1f1f;
+    -fx-border-radius: 10;
+}
+
+.list {
+    -fx-background-color: #1f1f1f;
+    -fx-background-radius: 10;
+    -fx-border-color: #1f1f1f;
+    -fx-border-radius: 10;
+    -fx-padding: 4;
+}
+
+.list .virtual-flow {
+    -fx-background-color: transparent;
+}
+
+.list:focused {
+    -fx-border-color: #171717;
+}
+
+.list .virtual-flow .mfx-list-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+}
+
+.list .virtual-flow .mfx-list-cell .data-label {
+    -fx-text-fill: white;
+}
+
+.list .virtual-flow .mfx-list-cell:hover,
+.list .virtual-flow .mfx-list-cell:selected {
+    -fx-background-color: rgba(255, 255, 255, 0.47);
+}
+
+.list .virtual-flow .mfx-list-cell .mfx-ripple-generator {
+    -mfx-auto-clip: true;
+}
+
+.list .virtual-flow .mfx-list-cell:selected .mfx-ripple-generator {
+    -mfx-paused: true;
+}
+
+.combo-box {
+    -fx-background-color: #1f1f1f;
+    -fx-border-color: #181818;
+    -fx-text-fill: white;
+}
+
+.combo-box * {
+    -fx-background-color: #1f1f1f;
+}
+
+.combo-box .label {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: white;
+}
+
+.combo-box .cell {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: white;
+}
+
+.combo-box .mfx-combo-box-cell {
+    -fx-background-color: #1f1f1f;
+    -fx-text-fill: white;
+}
+
+.dialog {
+    -fx-background-color: #141414;
+    -fx-border-color: #030303;
+    -fx-border-width: 4;
+}

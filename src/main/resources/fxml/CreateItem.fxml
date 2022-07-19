@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXComboBox?>
+<?import io.github.palexdev.materialfx.controls.MFXScrollPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+
+<AnchorPane prefHeight="900.0" prefWidth="700.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.CreateItem">
+   <children>
+      <MFXScrollPane prefHeight="900.0" prefWidth="700.0" styleClass="container">
+         <content>
+            <VBox alignment="TOP_CENTER" prefHeight="897.0" prefWidth="686.0">
+               <children>
+                  <Label styleClass="title" text="Create New Item" textFill="WHITE" />
+                  <Label text="Spritesheet" textFill="WHITE">
+                     <font>
+                        <Font size="25.0" />
+                     </font>
+                  </Label>
+                  <ImageView fx:id="spriteImage" fitHeight="167.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../assets/transparent_grid.png" />
+                     </image>
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </ImageView>
+                  <Text fx:id="spritesheetLabel" fill="WHITE" strokeType="OUTSIDE" strokeWidth="0.0" text="No File Chosen">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Text>
+                  <MFXButton onMouseReleased="#chooseSpritesheetReleased" prefHeight="25.0" prefWidth="145.0" text="Choose Spritesheet">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </MFXButton>
+                  <Label text="Width" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="width" maxWidth="-Infinity">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="340.0" layoutY="344.0" text="Height" textFill="WHITE">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="height" maxWidth="-Infinity">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label text="Name" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="name" maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0" promptText="Item Name (No Spaces or special characters)">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="334.0" layoutY="344.0" text="Display Name" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="displayName" layoutX="233.0" layoutY="374.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0" promptText="Item Display Name">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="299.0" layoutY="531.0" text="Max Stack" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="maxStack" layoutX="233.0" layoutY="561.0" maxWidth="-Infinity" prefHeight="25.0" prefWidth="255.0" promptText="Item Max Stack (E.g 1, 30, 99, 999)" text="1">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Label layoutX="315.0" layoutY="596.0" text="Value" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER" prefHeight="46.0" prefWidth="700.0" spacing="10.0">
+                     <children>
+                        <Label text="Platinum:" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="platinum" prefHeight="9.0" prefWidth="49.0" text="0" />
+                        <Label layoutX="304.0" layoutY="24.0" text="Gold:" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="gold" layoutX="347.0" layoutY="21.0" prefHeight="9.0" prefWidth="49.0" text="0" />
+                        <Label layoutX="377.0" layoutY="24.0" text="Silver:" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="silver" layoutX="396.0" layoutY="21.0" prefHeight="9.0" prefWidth="49.0" text="0" />
+                        <Label layoutX="425.0" layoutY="24.0" text="Copper:" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="copper" layoutX="441.0" layoutY="21.0" prefHeight="9.0" prefWidth="49.0" text="1" />
+                     </children>
+                  </HBox>
+                  <Label layoutX="328.0" layoutY="661.0" text="Rarity" textFill="WHITE">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Label>
+                  <MFXComboBox fx:id="rarityPicker" floatMode="DISABLED" prefHeight="33.0" prefWidth="150.0" styleClass="combo-box">
+                     <textFill>
+                        <Color red="1.0" green="1.0" blue="1.0" opacity="0.8700000047683716" />
+                     </textFill>
+                  </MFXComboBox>
+                  <MFXButton onMouseReleased="#createReleased" prefHeight="30.0" prefWidth="170.0" styleClass="highlight-button" text="Create">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                  </MFXButton>
+               </children>
+            </VBox>
+         </content>
+      </MFXScrollPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,37 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.10'
+    id "io.freefair.lombok" version "6.5.0.2"
+}
+
+sourceCompatibility = 11
+targetCompatibility = 11
+
+group 'net.guardiandev.terrabuild'
+version '1.0.0'
+mainClassName = "net.guardiandev.terrabuild.TerrabuildApplication"
+
+application {
+    mainClass = "net.guardiandev.terrabuild.TerrabuildApplication"
+    mainModule = "net.guardiandev.terrabuild"
+}
+
+javafx {
+    version = "11"
+    modules = [ 'javafx.controls', 'javafx.fxml']
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.12.0'
+
+    // Logging
+    implementation 'org.slf4j:slf4j-api:1.7.36'
+    implementation 'ch.qos.logback:logback-classic:1.2.11'
+
+    implementation 'io.github.palexdev:materialfx:11.13.5'
+}

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import io.github.palexdev.materialfx.controls.MFXListView?>
+<?import io.github.palexdev.materialfx.controls.legacy.MFXLegacyListCell?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.SVGPath?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchor" prefHeight="500.0" prefWidth="400.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.ManageMods">
+   <children>
+      <Label layoutX="105.0" layoutY="14.0" text="Manage Mods" textFill="WHITE">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <MFXButton layoutX="73.0" layoutY="420.0" onMouseReleased="#loadModReleased" prefHeight="31.0" prefWidth="126.0" text="Load Mod">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="214.0" layoutY="420.0" onMouseReleased="#createModReleased" prefHeight="31.0" prefWidth="126.0" styleClass="highlight-button" text="Create Mod">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </MFXButton>
+      <MFXLegacyListCell layoutX="-677.0" layoutY="-242.0" />
+      <MFXButton layoutX="144.0" layoutY="455.0" onMouseReleased="#deleteModReleased" prefHeight="31.0" prefWidth="126.0" styleClass="red-button" text="Delete Mod">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </MFXButton>
+      <MFXListView fx:id="modsList" layoutX="81.0" layoutY="62.0" prefHeight="350.0" prefWidth="253.0" styleClass="list" />
+      <Pane fx:id="pane" layoutX="94.0" layoutY="110.0" prefHeight="232.0" prefWidth="226.0" />
+      <SVGPath layoutX="344.0" layoutY="-17.0" />
+   </children>
+</AnchorPane>
