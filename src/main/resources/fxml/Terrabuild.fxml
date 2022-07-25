@@ -174,14 +174,22 @@
          <children>
             <BorderPane prefHeight="57.0" prefWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <left>
-                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="307.0" spacing="10.0" BorderPane.alignment="CENTER">
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="332.0" spacing="10.0" BorderPane.alignment="CENTER">
                      <children>
-                        <MFXButton onMouseReleased="#exportModReleased" prefHeight="27.0" prefWidth="139.0" text="Export Mod">
+                        <MFXButton fx:id="saveModBtn" disable="true" layoutX="20.0" layoutY="25.0" onMouseReleased="#saveModReleased" prefHeight="27.0" prefWidth="139.0" text="Save Mod">
                            <font>
                               <Font name="Verdana" size="13.0" />
                            </font>
                            <HBox.margin>
                               <Insets left="10.0" />
+                           </HBox.margin>
+                        </MFXButton>
+                        <MFXButton fx:id="exportModBtn" disable="true" onMouseReleased="#exportModReleased" prefHeight="27.0" prefWidth="139.0" styleClass="highlight-button" text="Export Mod">
+                           <font>
+                              <Font name="Verdana" size="13.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets />
                            </HBox.margin>
                         </MFXButton>
                      </children>

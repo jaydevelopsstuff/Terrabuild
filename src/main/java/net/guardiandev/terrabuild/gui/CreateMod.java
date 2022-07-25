@@ -36,6 +36,7 @@ public class CreateMod {
 
         if(sName.isEmpty() || sDisplayName.isEmpty() || sAuthor.isEmpty() || sVersion.isEmpty()) return;
 
+        TerrabuildApplication.Logger.info(String.format("Creating new mod: %s", sName));
         Mod mod = TerrabuildApplication.modManager.createNewMod();
         mod.setName(sName);
         mod.setDisplayName(sDisplayName);

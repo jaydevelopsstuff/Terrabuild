@@ -1,6 +1,7 @@
 package net.guardiandev.terrabuild.backend;
 
 import lombok.Getter;
+import net.guardiandev.terrabuild.TerrabuildApplication;
 import net.guardiandev.terrabuild.backend.api.Mod;
 import net.guardiandev.terrabuild.backend.api.loader.ModLoader;
 import net.guardiandev.terrabuild.backend.api.loader.NameModLoader;
@@ -12,6 +13,8 @@ import java.io.File;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class ModManager {
     public static final File modsFolder = new File("./mods");
@@ -19,6 +22,8 @@ public class ModManager {
     private final ModLoader nameModLoader = new NameModLoader();
     private final ModLoader loader = new TBModLoader();
     private final ModSaver saver = new TBModSaver();
+    private final Timer autoSaveTimer = new Timer();
+    private boolean startedAutoSave = false;
 
     @Getter
     private Mod loadedMod = null;
@@ -59,9 +64,20 @@ public class ModManager {
 
     public void loadModAbs(File file) {
         loadedMod = loader.load(file);
+
+        // Schedule auto save cycle if not already started
+        if(startedAutoSave) return;
+        autoSaveTimer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                if(loadedMod.isDirty()) saveLoadedMod();
+            }
+        }, 500, 45 * 1000);
+        startedAutoSave = true;
     }
 
     public void saveLoadedMod() {
+        TerrabuildApplication.Logger.info(String.format("Saving mod %s", loadedMod.getName()));
         saveMod(loadedMod.getName());
     }
 
@@ -80,6 +96,7 @@ public class ModManager {
     public void saveModAbs(File file) {
         if(loadedMod == null) throw new RuntimeException("No loaded mod");
         saver.save(loadedMod, file);
+        loadedMod.clean();
     }
 
     public void deleteLoadedMod() {

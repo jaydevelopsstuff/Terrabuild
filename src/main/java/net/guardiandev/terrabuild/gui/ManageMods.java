@@ -43,6 +43,7 @@ public class ManageMods {
     public void loadModReleased() {
         List<Mod> mods = modsList.getSelectionModel().getSelectedValues();
         if(mods.isEmpty()) return;
+        TerrabuildApplication.Logger.info(String.format("Loading mod %s", mods.get(0).getName()));
         TerrabuildApplication.modManager.loadMod(mods.get(0).getName());
         Terrabuild.getINSTANCE().refreshLoadedMod(true);
         Stages.manageMods.hide();

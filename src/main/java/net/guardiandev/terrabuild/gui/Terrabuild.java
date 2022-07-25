@@ -34,6 +34,8 @@ public class Terrabuild {
     @FXML public Text versionText;
 
     // Buttons
+    @FXML public MFXButton saveModBtn;
+    @FXML public MFXButton exportModBtn;
     @FXML public MFXButton infoBtn;
     @FXML public MFXButton modInfoBtn;
     @FXML public MFXButton itemsBtn;
@@ -155,6 +157,8 @@ public class Terrabuild {
             node.setAlignment(Pos.CENTER_LEFT);
             node.setSpacing(10);
             ImageView spriteView = new ImageView(SwingFXUtils.toFXImage(item.getSprite(), null));
+            spriteView.setFitHeight(70);
+            spriteView.setPreserveRatio(true);
             Label label = new Label(item.getName());
             label.getStyleClass().add("text");
             label.setFont(Font.font(15));
@@ -172,11 +176,15 @@ public class Terrabuild {
     // END ITEMS
 
     public void showModButtons() {
+        saveModBtn.setDisable(false);
+        exportModBtn.setDisable(false);
         modInfoBtn.setVisible(true);
         itemsBtn.setVisible(true);
     }
 
     public void hideModButtons() {
+        saveModBtn.setDisable(true);
+        exportModBtn.setDisable(true);
         modInfoBtn.setVisible(false);
         itemsBtn.setVisible(false);
     }
@@ -184,6 +192,10 @@ public class Terrabuild {
      //           //
     // Listeners //
    //           //
+    public void saveModReleased() {
+        TerrabuildApplication.modManager.saveLoadedMod();
+    }
+
     public void exportModReleased() {
 
     }
