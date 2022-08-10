@@ -1,7 +1,7 @@
 package net.guardiandev.terrabuild.backend.api.saver;
 
-import net.guardiandev.terrabuild.backend.api.Item;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.item.Item;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 import net.guardiandev.terrabuild.backend.api.ModContent;
 
 import java.io.DataOutputStream;
@@ -33,7 +33,8 @@ public class TBModSaver implements ModSaver {
             try {
                 Files.copy(saveFile.toPath(), Paths.get(String.format("%s.bak", saveFile.toString())), StandardCopyOption.REPLACE_EXISTING);
             } catch(IOException e) {
-                throw new RuntimeException(e);
+               e.printStackTrace();
+               return false;
             }
             saveFile.delete();
         }
@@ -55,7 +56,8 @@ public class TBModSaver implements ModSaver {
 
             saveModContent(mod.getContent(), output);
         } catch(IOException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
+            return false;
         }
 
         return true;

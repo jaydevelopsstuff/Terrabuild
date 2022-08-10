@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import io.github.palexdev.materialfx.controls.MFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="225.0" prefWidth="600.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.ChooseItemType">
+   <children>
+      <Label layoutX="157.0" layoutY="14.0" text="Choose Item Type" textFill="WHITE">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <MFXButton layoutX="38.0" layoutY="76.0" onMouseReleased="#basicReleased" prefHeight="29.0" prefWidth="141.0" text="Basic" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="230.0" layoutY="76.0" onMouseReleased="#weaponReleased" prefHeight="29.0" prefWidth="141.0" text="Weapon" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="419.0" layoutY="76.0" onMouseReleased="#toolReleased" prefHeight="29.0" prefWidth="141.0" text="Tool" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="38.0" layoutY="133.0" onMouseReleased="#armorReleased" prefHeight="29.0" prefWidth="141.0" text="Armor Piece" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="230.0" layoutY="133.0" onMouseReleased="#accessoryReleased" prefHeight="29.0" prefWidth="141.0" text="Accessory" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </MFXButton>
+      <MFXButton layoutX="419.0" layoutY="133.0" onMouseReleased="#advancedReleased" prefHeight="29.0" prefWidth="141.0" styleClass="highlight-button" text="Advanced" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </MFXButton>
+   </children>
+</AnchorPane>

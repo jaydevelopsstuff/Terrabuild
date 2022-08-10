@@ -41,6 +41,12 @@ public class TerrabuildApplication extends Application {
         Stages.terrabuild.show();
     }
 
+    @Override
+    public void stop() {
+        modManager.exit();
+        System.exit(0);
+    }
+
     public URL getResource(String resName) {
         return getClass().getResource(resName);
     }

@@ -14,7 +14,9 @@ public class Stages {
     public static final Stage manageMods;
     public static final Stage createMod;
     public static final Stage deleteModDialog;
-    public static final Stage createItem;
+    public static final Stage chooseItemType;
+    public static final Stage createBasicItem;
+    //public static final Stage createAdvancedItem;
 
     static {
         try {
@@ -27,8 +29,10 @@ public class Stages {
             deleteModDialog = makeStage("/fxml/dialog/DeleteMod.fxml", "Delete Mod", false);
             deleteModDialog.initOwner(manageMods);
             deleteModDialog.initStyle(StageStyle.UNDECORATED);
-            createItem = makeStage("/fxml/CreateItem.fxml", "Create Item", false);
-            createItem.initOwner(terrabuild);
+            chooseItemType = makeStage("/fxml/ChooseItemType.fxml", "Choose Item Type", false);
+            chooseItemType.initOwner(terrabuild);
+            createBasicItem = makeStage("/fxml/CreateItem.fxml", "Create Item", false);
+            createBasicItem.initOwner(terrabuild);
         } catch(IOException e) {
             throw new RuntimeException(e);
         }

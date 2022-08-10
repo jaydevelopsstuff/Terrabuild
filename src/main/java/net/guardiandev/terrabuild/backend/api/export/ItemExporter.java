@@ -1,7 +1,7 @@
 package net.guardiandev.terrabuild.backend.api.export;
 
-import net.guardiandev.terrabuild.backend.api.Item;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.item.Item;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 
 public class ItemExporter {
     public static String toCode(Mod mod, Item item) {

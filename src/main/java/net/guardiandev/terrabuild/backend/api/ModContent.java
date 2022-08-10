@@ -2,6 +2,8 @@ package net.guardiandev.terrabuild.backend.api;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import net.guardiandev.terrabuild.backend.api.content.item.Item;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 
 import java.util.ArrayList;
 import java.util.List;

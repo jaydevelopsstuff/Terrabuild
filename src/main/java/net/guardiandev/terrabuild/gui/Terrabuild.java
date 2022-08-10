@@ -4,13 +4,8 @@ import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXListView;
 import io.github.palexdev.materialfx.controls.cell.MFXListCell;
 import io.github.palexdev.materialfx.utils.SwingFXUtils;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.geometry.Pos;
-import javafx.scene.Group;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
@@ -18,19 +13,22 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import lombok.Getter;
 import net.guardiandev.terrabuild.TerrabuildApplication;
-import net.guardiandev.terrabuild.backend.api.Item;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.item.Item;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
+import net.guardiandev.terrabuild.backend.api.export.ModExporter;
 
 import java.io.IOException;
-import java.nio.ByteBuffer;
-import java.nio.charset.StandardCharsets;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class Terrabuild {
     @Getter
     private static Terrabuild INSTANCE;
+
+    private Timer statusTextTimer = new Timer();
+
     @FXML public Text versionText;
 
     // Buttons
@@ -39,6 +37,8 @@ public class Terrabuild {
     @FXML public MFXButton infoBtn;
     @FXML public MFXButton modInfoBtn;
     @FXML public MFXButton itemsBtn;
+
+    @FXML public Text statusText;
 
     // Panes
     @FXML public VBox infoPane;
@@ -171,7 +171,7 @@ public class Terrabuild {
     }
 
     public void createNewItemReleased() {
-        Stages.createItem.show();
+        Stages.chooseItemType.show();
     }
     // END ITEMS
 
@@ -193,11 +193,27 @@ public class Terrabuild {
     // Listeners //
    //           //
     public void saveModReleased() {
-        TerrabuildApplication.modManager.saveLoadedMod();
+        if(!TerrabuildApplication.modManager.saveLoadedMod()) {
+            statusText.setText(String.format("Failed to save mod %s.", loadedMod.getName()));
+            createStatusDeleteTask();
+            return;
+        }
+        statusText.setText(String.format("Successfully saved %s", loadedMod.getName()));
+        createStatusDeleteTask();
     }
 
     public void exportModReleased() {
-
+        TerrabuildApplication.Logger.info(String.format("Exporting mod %s", loadedMod.getName()));
+        try {
+            ModExporter.export("./export", loadedMod);
+            statusText.setText(String.format("Successfully exported %s.", loadedMod.getName()));
+            createStatusDeleteTask();
+        } catch(IOException e) {
+            TerrabuildApplication.Logger.error("Export failed");
+            e.printStackTrace();
+            statusText.setText("Export failed.");
+            createStatusDeleteTask();
+        }
     }
 
     public void manageModsReleased() {
@@ -218,6 +234,29 @@ public class Terrabuild {
 
     public void itemsReleased() {
         switchTo(Panes.Items);
+    }
+
+
+
+
+    public void createStatusDeleteTask() {
+        statusTextTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                statusText.setText("");
+                cancel();
+            }
+        }, 5000);
+    }
+
+    public void createStatusDeleteTask(int s) {
+        statusTextTimer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                statusText.setText("");
+                cancel();
+            }
+        }, 1000L * s);
     }
 
     enum Panes {

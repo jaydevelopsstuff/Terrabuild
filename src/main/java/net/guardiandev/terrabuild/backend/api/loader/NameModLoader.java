@@ -1,6 +1,6 @@
 package net.guardiandev.terrabuild.backend.api.loader;
 
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 
 import java.io.DataInputStream;
 import java.io.File;

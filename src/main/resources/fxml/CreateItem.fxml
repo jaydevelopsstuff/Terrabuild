@@ -16,7 +16,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="900.0" prefWidth="700.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.CreateItem">
+<AnchorPane prefHeight="900.0" prefWidth="700.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.CreateBasicItem">
    <children>
       <MFXScrollPane prefHeight="900.0" prefWidth="700.0" styleClass="container">
          <content>

@@ -2,12 +2,13 @@ package net.guardiandev.terrabuild.backend;
 
 import lombok.Getter;
 import net.guardiandev.terrabuild.TerrabuildApplication;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 import net.guardiandev.terrabuild.backend.api.loader.ModLoader;
 import net.guardiandev.terrabuild.backend.api.loader.NameModLoader;
 import net.guardiandev.terrabuild.backend.api.loader.TBModLoader;
 import net.guardiandev.terrabuild.backend.api.saver.ModSaver;
 import net.guardiandev.terrabuild.backend.api.saver.TBModSaver;
+import net.guardiandev.terrabuild.gui.Terrabuild;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -31,6 +32,11 @@ public class ModManager {
     public ModManager() {
         if(modsFolder.isFile()) modsFolder.delete();
         if(!modsFolder.exists()) modsFolder.mkdir();
+    }
+
+    public void exit() {
+        saveLoadedMod();
+        autoSaveTimer.cancel();
     }
 
     public List<Mod> getSavedMods() {
@@ -70,33 +76,43 @@ public class ModManager {
         autoSaveTimer.scheduleAtFixedRate(new TimerTask() {
             @Override
             public void run() {
-                if(loadedMod.isDirty()) saveLoadedMod();
+                if(loadedMod.isDirty()) {
+                    if(saveLoadedMod()) {
+                        Terrabuild.getINSTANCE().statusText.setText(String.format("Successfully saved %s", loadedMod.getName()));
+                        Terrabuild.getINSTANCE().createStatusDeleteTask(3);
+                    } else {
+                        Terrabuild.getINSTANCE().statusText.setText(String.format("Failed to save %s", loadedMod.getName()));
+                        Terrabuild.getINSTANCE().createStatusDeleteTask(3);
+                    }
+                }
             }
         }, 500, 45 * 1000);
         startedAutoSave = true;
     }
 
-    public void saveLoadedMod() {
+    public boolean saveLoadedMod() {
+        if(loadedMod == null) return false;
         TerrabuildApplication.Logger.info(String.format("Saving mod %s", loadedMod.getName()));
-        saveMod(loadedMod.getName());
+        return saveMod(loadedMod.getName());
     }
 
-    public void saveMod(String name) {
-        saveModAbs(String.format("./mods/%s.tbmod", name));
+    public boolean saveMod(String name) {
+        return saveModAbs(String.format("./mods/%s.tbmod", name));
     }
 
-    public void saveModAbs(String location) {
-        saveModAbs(new File(location));
+    public boolean saveModAbs(String location) {
+        return saveModAbs(new File(location));
     }
 
-    public void saveModAbs(Path path) {
-        saveModAbs(path.toFile());
+    public boolean saveModAbs(Path path) {
+        return saveModAbs(path.toFile());
     }
 
-    public void saveModAbs(File file) {
+    public boolean saveModAbs(File file) {
         if(loadedMod == null) throw new RuntimeException("No loaded mod");
-        saver.save(loadedMod, file);
+        boolean result = saver.save(loadedMod, file);
         loadedMod.clean();
+        return result;
     }
 
     public void deleteLoadedMod() {

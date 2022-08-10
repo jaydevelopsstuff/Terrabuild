@@ -1,6 +1,7 @@
-package net.guardiandev.terrabuild.backend.api;
+package net.guardiandev.terrabuild.backend.api.content;
 
 import lombok.Data;
+import net.guardiandev.terrabuild.backend.api.ModContent;
 
 @Data
 public class Mod {

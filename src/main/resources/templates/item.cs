@@ -1,5 +1,5 @@
-<[UsingID~using Terraria.ID]>
-using Terraria.ModLoader
+<[UsingID~using Terraria.ID;]>
+using Terraria.ModLoader;
 
 namespace <{ModName}>.Content.Items
 {
@@ -11,11 +11,11 @@ namespace <{ModName}>.Content.Items
 
         public override void SetDefaults()
         {
-            Item.width = <{ItemWidth}>
-            Item.height = <{ItemHeight}>
-            Item.value = <{ItemValue}>
-            Item.rare = <{ItemRarity}>
-            Item.maxStack = <{ItemMaxStack}>
+            Item.width = <{ItemWidth}>;
+            Item.height = <{ItemHeight}>;
+            Item.value = <{ItemValue}>;
+            Item.rare = <{ItemRarity}>;
+            Item.maxStack = <{ItemMaxStack}>;
         }
     }
 }

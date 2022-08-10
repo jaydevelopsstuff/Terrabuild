@@ -3,14 +3,12 @@ package net.guardiandev.terrabuild.gui;
 import io.github.palexdev.materialfx.controls.MFXComboBox;
 import io.github.palexdev.materialfx.utils.SwingFXUtils;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import net.guardiandev.terrabuild.TerrabuildApplication;
-import net.guardiandev.terrabuild.backend.api.Item;
+import net.guardiandev.terrabuild.backend.api.content.item.Item;
 import net.guardiandev.terrabuild.utils.TerrariaUtil;
 
 import javax.imageio.ImageIO;
@@ -19,7 +17,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-public class CreateItem {
+public class CreateBasicItem {
     @FXML public ImageView spriteImage;
     @FXML public BufferedImage sprite;
     @FXML public Text spritesheetLabel;
@@ -43,7 +41,7 @@ public class CreateItem {
         chooser.setTitle("Choose Spritesheet");
         chooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("PNG File", "*.png"));
 
-        File file = chooser.showOpenDialog(Stages.createItem);
+        File file = chooser.showOpenDialog(Stages.createBasicItem);
 
         spritesheetLabel.setText(file.getName());
         try {
@@ -104,6 +102,6 @@ public class CreateItem {
         copper.setText("1");
         rarityPicker.selectItem("White");
 
-        Stages.createItem.hide();
+        Stages.createBasicItem.hide();
     }
 }

@@ -2,24 +2,13 @@ package net.guardiandev.terrabuild.gui;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXListView;
-import io.github.palexdev.materialfx.dialogs.MFXGenericDialog;
-import io.github.palexdev.materialfx.dialogs.MFXGenericDialogBuilder;
-import io.github.palexdev.materialfx.dialogs.MFXStageDialog;
-import io.github.palexdev.materialfx.enums.ScrimPriority;
-import io.github.palexdev.materialfx.font.MFXFontIcon;
-import javafx.application.Platform;
 import javafx.fxml.FXML;
-import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
-import javafx.stage.Modality;
-import javafx.stage.Stage;
 import lombok.Getter;
 import net.guardiandev.terrabuild.TerrabuildApplication;
-import net.guardiandev.terrabuild.backend.ModManager;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 
 import java.util.List;
-import java.util.Map;
 
 public class ManageMods {
     @Getter

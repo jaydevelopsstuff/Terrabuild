@@ -139,6 +139,11 @@
                   </Text>
                </children>
             </VBox>
+            <Text fx:id="statusText" fill="WHITE" layoutX="780.0" layoutY="638.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="223.0" AnchorPane.bottomAnchor="1.0" AnchorPane.rightAnchor="6.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
       <AnchorPane prefHeight="700.0" prefWidth="185.0">
@@ -174,7 +179,7 @@
          <children>
             <BorderPane prefHeight="57.0" prefWidth="1015.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                <left>
-                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="332.0" spacing="10.0" BorderPane.alignment="CENTER">
+                  <HBox alignment="CENTER_LEFT" prefHeight="57.0" prefWidth="469.0" spacing="10.0" BorderPane.alignment="CENTER">
                      <children>
                         <MFXButton fx:id="saveModBtn" disable="true" layoutX="20.0" layoutY="25.0" onMouseReleased="#saveModReleased" prefHeight="27.0" prefWidth="139.0" text="Save Mod">
                            <font>

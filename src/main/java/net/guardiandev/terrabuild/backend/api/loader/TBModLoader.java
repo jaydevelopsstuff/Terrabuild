@@ -1,7 +1,7 @@
 package net.guardiandev.terrabuild.backend.api.loader;
 
-import net.guardiandev.terrabuild.backend.api.Item;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.item.Item;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 import net.guardiandev.terrabuild.backend.api.ModContent;
 
 import java.io.*;

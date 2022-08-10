@@ -1,14 +1,11 @@
 package net.guardiandev.terrabuild.gui;
 
 import javafx.beans.property.StringProperty;
-import javafx.beans.value.ObservableValue;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import net.guardiandev.terrabuild.TerrabuildApplication;
-import net.guardiandev.terrabuild.backend.api.Mod;
+import net.guardiandev.terrabuild.backend.api.content.Mod;
 
 public class CreateMod {
     @FXML public TextField name;
