@@ -15,14 +15,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane prefHeight="900.0" prefWidth="700.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.CreateBasicItem">
+<AnchorPane prefHeight="900.0" prefWidth="700.0" styleClass="container" stylesheets="@../../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.item.CreateBasicItem">
    <children>
       <MFXScrollPane prefHeight="900.0" prefWidth="700.0" styleClass="container">
          <content>
             <VBox alignment="TOP_CENTER" prefHeight="897.0" prefWidth="686.0">
                <children>
-                  <Label styleClass="title" text="Create New Item" textFill="WHITE" />
+                  <Label styleClass="title" text="Basic Item" textFill="WHITE" />
                   <Label text="Spritesheet" textFill="WHITE">
                      <font>
                         <Font size="25.0" />
@@ -30,7 +29,7 @@
                   </Label>
                   <ImageView fx:id="spriteImage" fitHeight="167.0" fitWidth="197.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../assets/transparent_grid.png" />
+                        <Image url="@../../assets/transparent_grid.png" />
                      </image>
                      <VBox.margin>
                         <Insets bottom="10.0" />

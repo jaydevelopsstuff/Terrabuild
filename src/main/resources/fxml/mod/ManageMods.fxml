@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="anchor" prefHeight="500.0" prefWidth="400.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.ManageMods">
+<AnchorPane fx:id="anchor" prefHeight="500.0" prefWidth="400.0" styleClass="container" stylesheets="@../../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.mod.ManageMods">
    <children>
       <Label layoutX="105.0" layoutY="14.0" text="Manage Mods" textFill="WHITE">
          <font>

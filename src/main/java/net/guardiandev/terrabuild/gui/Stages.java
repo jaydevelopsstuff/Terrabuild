@@ -16,23 +16,26 @@ public class Stages {
     public static final Stage deleteModDialog;
     public static final Stage chooseItemType;
     public static final Stage createBasicItem;
+    public static final Stage createWeaponItem;
     //public static final Stage createAdvancedItem;
 
     static {
         try {
             terrabuild = makeStage("/fxml/Terrabuild.fxml", "Terrabuild", true);
-            manageMods = makeStage("/fxml/ManageMods.fxml", "Manage Mods", false);
+            manageMods = makeStage("/fxml/mod/ManageMods.fxml", "Manage Mods", false);
             manageMods.initOwner(terrabuild);
-            createMod = makeStage("/fxml/CreateMod.fxml", "Create Mod", false);
+            createMod = makeStage("/fxml/mod/CreateMod.fxml", "Create Mod", false);
             createMod.initOwner(manageMods);
             createMod.initStyle(StageStyle.UNDECORATED);
             deleteModDialog = makeStage("/fxml/dialog/DeleteMod.fxml", "Delete Mod", false);
             deleteModDialog.initOwner(manageMods);
             deleteModDialog.initStyle(StageStyle.UNDECORATED);
-            chooseItemType = makeStage("/fxml/ChooseItemType.fxml", "Choose Item Type", false);
+            chooseItemType = makeStage("/fxml/item/ChooseItemType.fxml", "Choose Item Type", false);
             chooseItemType.initOwner(terrabuild);
-            createBasicItem = makeStage("/fxml/CreateItem.fxml", "Create Item", false);
+            createBasicItem = makeStage("/fxml/item/CreateItem.fxml", "Create Basic Item", false);
             createBasicItem.initOwner(terrabuild);
+            createWeaponItem = makeStage("/fxml/item/CreateWeaponItem.fxml", "Create Weapon Item", false);
+            createWeaponItem.initOwner(terrabuild);
         } catch(IOException e) {
             throw new RuntimeException(e);
         }

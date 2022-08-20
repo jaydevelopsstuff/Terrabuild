@@ -30,6 +30,10 @@ public class Item {
      * Sprite for the item.
      */
     protected BufferedImage sprite;
+    /**
+     * Whether this item is an expert mode exclusive item.
+     */
+    protected boolean expertOnly;
 
 
     // Type
@@ -62,10 +66,7 @@ public class Item {
     protected UseStyle useStyle = UseStyle.None;
     protected int useAnimation = 100;
     protected int useTime = 100;
-    /**
-     * Whether this item is an expert mode exclusive item.
-     */
-    protected boolean expertOnly;
+    protected boolean autoReuse;
 
 
     // Stats
@@ -121,22 +122,62 @@ public class Item {
 
     public void read(DataInputStream input) throws IOException {
         name = input.readUTF();
+        displayName = input.readUTF();
         width = input.readInt();
         height = input.readInt();
         maxStack = input.readInt();
         value = input.readInt();
         rarity = Rarity.fromId(input.readInt());
+        expertOnly = input.readBoolean();
+
+        type = ItemType.valueOf(input.readUTF());
+        weaponType = WeaponType.valueOf(input.readUTF());
+        noMeleeDamage = input.readBoolean();
+        consumable = input.readBoolean();
+        accessory = input.readBoolean();
+
+        createBlockId = input.readInt();
+        createWallId = input.readInt();
+        useStyle = UseStyle.valueOf(input.readUTF());
+        useAnimation = input.readInt();
+        useTime = input.readInt();
+        autoReuse = input.readBoolean();
+
+        damage = input.readInt();
+        knockback = input.readFloat();
+        critChance = input.readInt();
         sprite = ImageIO.read(input);
+        // TODO
     }
 
     public void write(DataOutputStream output) throws IOException {
         output.writeUTF(name);
+        output.writeUTF(displayName);
         output.writeInt(width);
         output.writeInt(height);
         output.writeInt(maxStack);
         output.writeInt(value);
         output.writeInt(rarity.id);
+        output.writeBoolean(expertOnly);
+
+        output.writeUTF(type.name());
+        output.writeUTF(weaponType.name());
+        output.writeBoolean(noMeleeDamage);
+        output.writeBoolean(consumable);
+        output.writeBoolean(accessory);
+
+        output.writeInt(createBlockId);
+        output.writeInt(createWallId);
+        output.writeUTF(useStyle.name());
+        output.writeInt(useAnimation);
+        output.writeInt(useTime);
+        output.writeBoolean(autoReuse);
+
+        output.writeInt(damage);
+        output.writeFloat(knockback);
+        output.writeInt(critChance);
         ImageIO.write(sprite, "png", output);
+        // TODO
     }
 
     @RequiredArgsConstructor
@@ -193,6 +234,13 @@ public class Item {
         public static UseStyle fromId(int id) {
             for(UseStyle useStyle : UseStyle.values()) {
                 if(useStyle.id == id) return useStyle;
+            }
+            return null;
+        }
+
+        public static UseStyle fromName(String name) {
+            for(UseStyle useStyle : UseStyle.values()) {
+                if(useStyle.name().equals(name)) return useStyle;
             }
             return null;
         }

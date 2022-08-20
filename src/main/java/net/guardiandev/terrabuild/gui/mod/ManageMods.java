@@ -1,4 +1,4 @@
-package net.guardiandev.terrabuild.gui;
+package net.guardiandev.terrabuild.gui.mod;
 
 import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXListView;
@@ -7,6 +7,8 @@ import javafx.scene.layout.Pane;
 import lombok.Getter;
 import net.guardiandev.terrabuild.TerrabuildApplication;
 import net.guardiandev.terrabuild.backend.api.content.Mod;
+import net.guardiandev.terrabuild.gui.Stages;
+import net.guardiandev.terrabuild.gui.Terrabuild;
 
 import java.util.List;
 

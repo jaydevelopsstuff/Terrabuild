@@ -16,6 +16,17 @@ namespace <{ModName}>.Content.Items
             Item.value = <{ItemValue}>;
             Item.rare = <{ItemRarity}>;
             Item.maxStack = <{ItemMaxStack}>;
+            <[SetExpertExclusive~Item.expert = <{ExpertExclusive}>;]>
+
+            Item.useStyle = <{UseStyle}>;
+            Item.useTime = <{UseTime}>;
+            Item.useAnimation = <{UseAnimation}>;
+            Item.autoReuse = <{AutoReuse}>;
+
+            <[SetDamageClass~Item.DamageType = DamageClass.<{DamageClass}>;]>
+            Item.damage = <{Damage}>;
+            Item.knockBack = <{Knockback}>;
+            Item.crit = <{CritChance}>;
         }
     }
 }

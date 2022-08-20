@@ -16,4 +16,7 @@ module net.guardiandev.terrabuild {
     exports net.guardiandev.terrabuild.backend.api.export;
     exports net.guardiandev.terrabuild.backend.api.content;
     exports net.guardiandev.terrabuild.backend.api.content.item;
+    exports net.guardiandev.terrabuild.gui.item;
+    exports net.guardiandev.terrabuild.gui.dialog;
+    exports net.guardiandev.terrabuild.gui.mod;
 }

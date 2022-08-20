@@ -1,4 +1,4 @@
-package net.guardiandev.terrabuild.gui;
+package net.guardiandev.terrabuild.gui.mod;
 
 import javafx.beans.property.StringProperty;
 import javafx.fxml.FXML;
@@ -6,6 +6,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import net.guardiandev.terrabuild.TerrabuildApplication;
 import net.guardiandev.terrabuild.backend.api.content.Mod;
+import net.guardiandev.terrabuild.gui.Stages;
 
 public class CreateMod {
     @FXML public TextField name;

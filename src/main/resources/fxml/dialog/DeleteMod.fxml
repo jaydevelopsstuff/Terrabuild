@@ -8,7 +8,7 @@
 <?import javafx.scene.text.Text?>
 
 
-<AnchorPane prefHeight="125.0" prefWidth="300.0" styleClass="container" stylesheets="@../../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.DeleteModDialog">
+<AnchorPane prefHeight="125.0" prefWidth="300.0" styleClass="container" stylesheets="@../../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.dialog.DeleteModDialog">
    <children>
       <Pane layoutY="-1.0" prefHeight="125.0" prefWidth="300.0" style="-fx-border-color: #000; -fx-border-width: 5;" />
       <Label layoutX="90.0" layoutY="14.0" text="Delete Mod" textFill="WHITE">

@@ -114,6 +114,21 @@ public class Template {
     public static class Variable {
         private final String name;
         private final String value;
+
+        public Variable(String name, boolean value) {
+            this.name = name;
+            this.value = Boolean.toString(value);
+        }
+
+        public Variable(String name, int value) {
+            this.name = name;
+            this.value = Integer.toString(value);
+        }
+
+        public Variable(String name, double value) {
+            this.name = name;
+            this.value = value + "F";
+        }
     }
 
     @Getter

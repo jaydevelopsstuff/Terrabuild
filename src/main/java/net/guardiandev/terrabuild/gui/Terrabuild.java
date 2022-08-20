@@ -4,12 +4,15 @@ import io.github.palexdev.materialfx.controls.MFXButton;
 import io.github.palexdev.materialfx.controls.MFXListView;
 import io.github.palexdev.materialfx.controls.cell.MFXListCell;
 import io.github.palexdev.materialfx.utils.SwingFXUtils;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
@@ -163,8 +166,18 @@ public class Terrabuild {
             label.getStyleClass().add("text");
             label.setFont(Font.font(15));
             MFXButton editButton = new MFXButton("Edit");
+            MFXButton deleteButton = new MFXButton("Delete");
             editButton.getStyleClass().add("highlight-button");
-            node.getChildren().addAll(spriteView, label, editButton);
+            editButton.setOnMouseReleased(event -> {
+                editButton.getRippleGenerator().setPaused(false);
+                editButton.getRippleGenerator().generateRipple(event);
+            });
+            deleteButton.getStyleClass().add("red-button");
+            deleteButton.setOnMouseReleased(event -> {
+                deleteButton.getRippleGenerator().setPaused(false);
+                deleteButton.getRippleGenerator().generateRipple(event);
+            });
+            node.getChildren().addAll(spriteView, label, editButton, deleteButton);
 
             itemsList.getItems().add(node);
         }

@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.SVGPath?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="300.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.CreateMod">
+<AnchorPane prefHeight="500.0" prefWidth="300.0" styleClass="container" stylesheets="@../../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.mod.CreateMod">
    <children>
       <Pane prefHeight="500.0" prefWidth="300.0" style="-fx-border-color: #000; -fx-border-width: 5;">
          <children>
@@ -50,7 +50,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextArea fx:id="description" layoutX="51.0" layoutY="321.0" prefHeight="113.0" prefWidth="200.0" stylesheets="@../stylesheet/application.css" />
+      <TextArea fx:id="description" layoutX="51.0" layoutY="321.0" prefHeight="113.0" prefWidth="200.0" stylesheets="@../../stylesheet/application.css" />
       <MFXButton layoutX="50.0" layoutY="445.0" onMouseReleased="#createModReleased" prefHeight="31.0" prefWidth="92.0" styleClass="highlight-button" text="Create">
          <font>
             <Font size="15.0" />

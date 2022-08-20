@@ -1,6 +1,9 @@
-package net.guardiandev.terrabuild.gui;
+package net.guardiandev.terrabuild.gui.dialog;
 
 import net.guardiandev.terrabuild.TerrabuildApplication;
+import net.guardiandev.terrabuild.gui.mod.ManageMods;
+import net.guardiandev.terrabuild.gui.Stages;
+import net.guardiandev.terrabuild.gui.Terrabuild;
 
 public class DeleteModDialog {
     public void deleteConfirmReleased() {

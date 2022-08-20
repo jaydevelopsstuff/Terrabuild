@@ -6,7 +6,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="225.0" prefWidth="600.0" styleClass="container" stylesheets="@../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.ChooseItemType">
+<AnchorPane prefHeight="225.0" prefWidth="600.0" styleClass="container" stylesheets="@../../stylesheet/application.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="net.guardiandev.terrabuild.gui.item.ChooseItemType">
    <children>
       <Label layoutX="157.0" layoutY="14.0" text="Choose Item Type" textFill="WHITE">
          <font>
